@@ -1,0 +1,4 @@
+interface:
+  display_name: "Roll-Rule CTA Comparison"
+  short_description: "Compare commodity futures roll rules on a frozen CTA signal"
+  default_prompt: "Use $roll-cta to compare fixed-date, OI-confirmed, and gradual roll rules on the same frozen CTA signal."

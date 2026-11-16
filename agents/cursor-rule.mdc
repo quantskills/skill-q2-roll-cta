@@ -1,0 +1,23 @@
+---
+description: Use the Roll-Rule CTA Comparison skill to compare futures roll rules, roll cost, and roll ledgers.
+alwaysApply: false
+---
+
+# Roll-Rule CTA Comparison Skill
+
+When the user asks to compare futures roll rules, audit roll cost or roll gaps, reproduce a CTA roll ledger, or explain how roll timing changes real contract PnL, use the local skill package.
+
+Preferred local project path:
+
+```text
+.cursor/skills/roll-cta
+```
+
+Workflow:
+
+1. Read `.cursor/skills/roll-cta/SKILL.md`.
+2. For API fields and data contracts, read `.cursor/skills/roll-cta/references/api_guide.md`.
+3. Use the local `pandadata-api` skill to verify method parameters before any real API call.
+4. Set PANDA_DATA_USERNAME and PANDA_DATA_PASSWORD before fetching data, or pass `config["data_dir"]`.
+5. Preserve product universe, date range, cost assumptions, roll thresholds, and data dates.
+6. Do not invent data interfaces, fields, prices, or trading advice.

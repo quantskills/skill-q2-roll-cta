@@ -1,0 +1,42 @@
+{
+  "name": "roll-cta",
+  "version": "1.0.0",
+  "description": "Commodity-futures roll-rule comparison BUILD on a frozen CTA signal",
+  "author": "fuzijun",
+  "created_date": "2026-11-16",
+  "tags": ["quant", "build", "futures", "roll", "cta"],
+  "category": "build-research",
+  "spec": {
+    "build_id": "Q2",
+    "build_name": "roll-cta",
+    "build_type": "result-type",
+    "data_source": "PandaData"
+  },
+  "dependencies": {
+    "python": ">=3.10",
+    "pandas": ">=1.3.0",
+    "numpy": ">=1.20.0",
+    "pyarrow": ">=10.0.0",
+    "pandadata": "latest"
+  },
+  "scripts": {
+    "build": "scripts/build.py",
+    "test": "scripts/test.py"
+  },
+  "config": {
+    "start_date": "20210101",
+    "end_date": "20251231",
+    "rules": ["fixed", "oi", "gradual"],
+    "capital_per_product": 1000000.0,
+    "cost_bps_per_side": 1.5,
+    "momentum_days": 60,
+    "dead_zone": 0.02,
+    "force_roll_days": 10,
+    "gradual_days": 3
+  },
+  "production": {
+    "output_format": "parquet",
+    "update_frequency": "on-demand",
+    "retention_period": "1_year"
+  }
+}
